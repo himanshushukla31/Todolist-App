@@ -125,7 +125,6 @@ app.post("/delete", function (req, res) {
     if (checkedItemList=== day) {
         Item.findByIdAndRemove(checkedItemId, function (err) {
             if (!err) {
-                console.log("Successfully deleted item")
                 res.redirect("/")
             }
         })
@@ -141,7 +140,7 @@ app.post("/delete", function (req, res) {
 })
 
 let port = process.env.PORT;
-if (port == null || port == "") {
+if (port === null || port === "") {
   port = 3000;
 }
 
