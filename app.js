@@ -55,8 +55,6 @@ defaultItems = [item1, item2, item3];
 
 app.get("/", function (req, res) {
 
-
-
     Item.find(function (err, foundList) {
         if (foundList.length === 0) {
             Item.insertMany(defaultItems, function (err) {
@@ -140,7 +138,7 @@ app.post("/delete", function (req, res) {
 })
 
 let port = process.env.PORT;
-if (port === null || port === "") {
+if (port == null || port == "") {
   port = 3000;
 }
 
